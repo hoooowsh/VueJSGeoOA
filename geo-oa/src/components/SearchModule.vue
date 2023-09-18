@@ -1,7 +1,7 @@
 <template>
   <div>
     <input v-model="searchText" @keyup.enter="handleSearch" />
-    <button @click="handleSearch">Search</button>
+    <button @click="handleSearch">Search Location</button>
   </div>
 </template>
 
@@ -19,7 +19,11 @@ export default {
     handleSearch() {
       // Send the search text to the parent component using an event
       console.log("serjj", this.searchText);
-      this.$emit("search", this.searchText + "waaahaha");
+      const newLocation = {
+        address: this.searchText,
+        existance: false,
+      };
+      this.$emit("search", newLocation);
     },
   },
 };

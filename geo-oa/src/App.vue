@@ -2,29 +2,27 @@
   <div>
     <SearchModule @search="handleSearch" />
     <LocationButton />
-    <!-- 
-    <LocationMap :location="location" />
-    <LocationTable :data="searchedLocations" /> -->
+    <LocationHistory :searchedLocations="searchedLocations" />
   </div>
 </template>
 
 <script>
 import LocationButton from "@/components/LocationButton.vue";
 import SearchModule from "@/components/SearchModule.vue";
-// import LocationMap from "@/components/LocationMap.vue";
+import LocationHistory from "@/components/LocationHistoryTable.vue";
 // import LocationTable from "@/components/LocationTable.vue";
 
 export default {
   components: {
     SearchModule,
     LocationButton,
-    // LocationMap,
+    LocationHistory,
     // LocationTable,
   },
   data() {
     return {
       location: null,
-      searchedLocations: [],
+      searchedLocations: [{ name: "test", existance: "test" }],
     };
   },
   methods: {
@@ -32,17 +30,17 @@ export default {
      * get the result of searching from SearchModule
      */
     handleSearch(searchResult) {
-      console.log(searchResult);
-
       const newLocation = {
         name: searchResult.address,
         existance: searchResult.existance,
       };
-
-      // Append the new location to the array
+      console.log(newLocation);
+      // Append the new location to the array for displaying the list
       this.searchedLocations.push(newLocation);
+
       console.log(this.searchedLocations);
     },
+
     handleDeleteSelected() {
       // Delete selected rows and their markers
     },

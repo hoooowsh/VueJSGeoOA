@@ -1,6 +1,6 @@
 <template>
   <div class="geo-button">
-    <button @click="getLocation">Get Current Location</button>
+    <button @click="getLocation">Get Current Location From Browser</button>
   </div>
 </template>
 
