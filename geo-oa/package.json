@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-google-autocomplete": "^1.1.4",
+    "vue-tables-2": "^2.3.5",
+    "vue3-google-map": "^0.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
